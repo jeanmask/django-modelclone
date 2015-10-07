@@ -127,7 +127,7 @@ class ClonableModelAdmin(ModelAdmin):
         else:
             initial = model_to_dict(original_obj)
             initial = self.tweak_cloned_fields(initial)
-            form = ModelForm(initial=initial)
+            form = ModelForm(initial, initial=initial)
 
             prefixes = {}
             for FormSet, inline in zip(self.get_formsets(request), inline_instances):
